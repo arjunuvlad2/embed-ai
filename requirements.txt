@@ -1,0 +1,6 @@
+voyageai
+anthropic
+numpy
+scikit-learn
+matplotlib
+python-dotenv
