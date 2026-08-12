@@ -1,9 +1,26 @@
 # embed-ai
 
-A small, runnable exercise in vectorization: turn sentences into embedding
-vectors, look at the raw numbers, measure how "close" two vectors are, and
-plot them in 2D so semantically similar sentences visibly cluster together —
-no framework, no hidden magic, just the API calls and the math.
+Two small, runnable exercises building up from embeddings to a working
+RAG pipeline — no framework, no hidden magic, just the API calls and the
+math.
+
+- **Part 1 (this folder)** — turn sentences into embedding vectors, look
+  at the raw numbers, measure how "close" two vectors are, and plot them
+  in 2D so semantically similar sentences visibly cluster together.
+- **Part 2 ([`rag-search-exercise/`](rag-search-exercise/))** — use those
+  same vectors to retrieve relevant documents for a question, so Claude
+  answers grounded in real text instead of guessing.
+
+Do Part 1 first — Part 2 assumes you're already comfortable with
+embeddings and cosine similarity.
+
+---
+
+## Part 1: Vectorization & Embeddings
+
+Turn sentences into embedding vectors, look at the raw numbers, measure
+how "close" two vectors are, and plot them in 2D so semantically similar
+sentences visibly cluster together.
 
 ![Example output: three clusters of sentence embeddings](embeddings_plot.png)
 
@@ -80,6 +97,16 @@ Saved plot to embeddings_plot.png
   `voyage-3.5-lite` for cheaper/faster) and compare the plot
 - Swap PCA for `sklearn.manifold.TSNE` and compare the layout
 - Print the full similarity matrix instead of just one row
+
+---
+
+## Part 2: Semantic Search & RAG
+
+Once Part 1 makes sense, head into
+[`rag-search-exercise/`](rag-search-exercise/) — same embedding model,
+same cosine similarity math, now used to retrieve relevant documents for
+a question so Claude answers grounded in real text instead of guessing.
+Full setup and run instructions are in that folder's own README.
 
 ## License
 
