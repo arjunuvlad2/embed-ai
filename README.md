@@ -1,8 +1,8 @@
 # embed-ai
 
-Two small, runnable exercises building up from embeddings to a working
-RAG pipeline — no framework, no hidden magic, just the API calls and the
-math.
+Four small, runnable exercises building up from embeddings to a working
+tool-using agent — no framework, no hidden magic, just the API calls and
+the math.
 
 - **Part 1 (this folder)** — turn sentences into embedding vectors, look
   at the raw numbers, measure how "close" two vectors are, and plot them
@@ -10,9 +10,17 @@ math.
 - **Part 2 ([`rag-search-exercise/`](rag-search-exercise/))** — use those
   same vectors to retrieve relevant documents for a question, so Claude
   answers grounded in real text instead of guessing.
+- **Part 3 ([`prompt-context-engineering/`](prompt-context-engineering/))**
+  — five prompt engineering techniques in isolation, then a reframe:
+  retrieval from Part 2 turns out to be one technique for engineering
+  context, not a separate topic.
+- **Part 4 ([`tool-use-agents/`](tool-use-agents/))** — Claude stops just
+  answering and starts acting: an agentic loop where it can call a
+  function, get a result, and use it — including wrapping Part 2's
+  retrieval as a tool.
 
-Do Part 1 first — Part 2 assumes you're already comfortable with
-embeddings and cosine similarity.
+Do them in order — each part assumes you're comfortable with the one
+before it.
 
 ---
 
@@ -107,6 +115,26 @@ Once Part 1 makes sense, head into
 same cosine similarity math, now used to retrieve relevant documents for
 a question so Claude answers grounded in real text instead of guessing.
 Full setup and run instructions are in that folder's own README.
+
+## Part 3: Prompt & Context Engineering
+
+Once Part 2 makes sense, head into
+[`prompt-context-engineering/`](prompt-context-engineering/) — five
+prompt engineering techniques (clarity, few-shot, system prompts,
+structured outputs, chain of thought), each demonstrated as a real
+before/after API call. Then a reframe: retrieval from Part 2 is one
+specific technique for engineering *context*, not a separate topic. Full
+setup and run instructions are in that folder's own README.
+
+## Part 4: Tool Use & Agents
+
+Once Part 3 makes sense, head into
+[`tool-use-agents/`](tool-use-agents/) — the agentic loop: Claude asks to
+call a function, your code runs it and hands back a result, repeat until
+it has a final answer. Culminates in a small agent that wraps Part 2's
+retrieval as one tool alongside a second, non-retrieval tool, so some
+questions genuinely need both. Full setup and run instructions are in
+that folder's own README.
 
 ## License
 
