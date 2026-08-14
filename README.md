@@ -1,8 +1,8 @@
 # embed-ai
 
-Four small, runnable exercises building up from embeddings to a working
-tool-using agent — no framework, no hidden magic, just the API calls and
-the math.
+Five small, runnable exercises building up from embeddings to a complete,
+self-checking agent — no framework, no hidden magic, just the API calls
+and the math.
 
 - **Part 1 (this folder)** — turn sentences into embedding vectors, look
   at the raw numbers, measure how "close" two vectors are, and plot them
@@ -18,6 +18,10 @@ the math.
   answering and starts acting: an agentic loop where it can call a
   function, get a result, and use it — including wrapping Part 2's
   retrieval as a tool.
+- **Part 5 ([`capstone/`](capstone/))** — all four parts combined into one
+  agent over real PDF documents ([`mini-project-1-pdfs/`](mini-project-1-pdfs/)),
+  plus two things every real Claude app needs: a self-grading eval script,
+  and a guardrails check that uses Claude itself as a judge.
 
 Do them in order — each part assumes you're comfortable with the one
 before it.
@@ -135,6 +139,19 @@ it has a final answer. Culminates in a small agent that wraps Part 2's
 retrieval as one tool alongside a second, non-retrieval tool, so some
 questions genuinely need both. Full setup and run instructions are in
 that folder's own README.
+
+## Part 5: Capstone
+
+Once Part 4 makes sense, head into [`capstone/`](capstone/) — every prior
+part combined into one three-tool agent running over the 10 real PDF
+policy documents in [`mini-project-1-pdfs/`](mini-project-1-pdfs/)
+(embeddings + retrieval from Parts 1–2, a tight system prompt from Part 3,
+the agentic loop from Part 4). Then two more things: `eval_capstone.py`
+runs a small golden-question set against the agent and scores it
+automatically, and `guardrails_check.py` fires adversarial questions at
+it and uses a second Claude call as a judge to grade the responses — the
+same "LLM-as-judge" pattern real eval pipelines use. Full setup and run
+instructions are in that folder's own README.
 
 ## License
 
